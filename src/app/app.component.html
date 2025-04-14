@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>AGV Controller</h2>
+  <button (click)="sendCommand('F')">🔼</button>
+
+  <div class="horizontal">
+    <button (click)="sendCommand('L')">◀️</button>
+    <button (click)="sendCommand('R')">▶️</button>
+  </div>
+
+  <button (click)="sendCommand('B')">🔽</button>
+
+  <button class="stop" (click)="sendCommand('S')">Brake</button>
+
+  <button (click)="trackLine()">Track the line</button>
+  
+  <h3 *ngIf="!routes.length">No recordings available</h3>
+  <ng-container *ngIf="routes.length">
+    <select [value]="selectedRoute" [(ngModel)]="selectedRoute">
+      <option *ngFor="let route of routes" [value]="route">{{ route.split('~')[0] }}</option>
+    </select>
+    <div class="horizontal">
+      <button (click)="proceed()">Forward</button>
+      <button (click)="reverse()">Reverse</button>
+    </div>
+  </ng-container>
+
+
+  <button [ngClass]="{ 'recording': isRecording }" (click)="toggleRecord()">
+    {{ isRecording ? 'Stop Recording' : 'Record' }}
+  </button>
+
+  <div *ngIf="showAutomationAlert" class="modal-overlay">
+    <div class="modal-content">
+      <p>🤖 Automation mode activated.</p>
+      <button (click)="haltAutomation()">Halt</button>
+    </div>
+  </div>
+</div>
