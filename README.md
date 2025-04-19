@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Akash-Peace/IOT-PI-ANGULAR/main/assets/agv_logo.png" alt="AGV Logo" width="150" height="150">
+  <img src="https://raw.githubusercontent.com/Akash-Peace/IOT-PI-ANGULAR/main/src/assets/agv_logo.png" alt="AGV Logo" width="150" height="150">
   <h3 align="center">Autonomous Guided Vehicle (AGV)</h3>
   <p align="center">
     <strong>A VIT College academic Project</strong>
